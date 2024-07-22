@@ -1,10 +1,24 @@
 import { useState } from "react"
 import React from 'react'
 
+import Axios from "axios";
+import Cookies from "universal-cookie";
+
 function Singup() {
+    const cookies = new Cookies();
     const [user, setUser] = useState(null)
 
-    const Singup = () => { };
+    const Singup = () => {
+    Axios.post("http://localhost:3001/singup",user).then(res=>{
+        const {token,userId,firstName,lastName,username,hashpass}=res.data;
+        cookies.set("token",token);
+        cookies.set("userId",userId);
+        cookies.set("firstName",firstName);
+        cookies.set("lastName",lastName);
+        cookies.set("username",username);
+        cookies.set("hashpass",hashpass);
+    });
+     };
 
     return (
         <div className='Singup'>
