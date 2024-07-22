@@ -4,7 +4,7 @@ import React from 'react'
 import Axios from "axios";
 import Cookies from "universal-cookie";
 
-function Singup() {
+function Singup({setIsAuth}) {
     const cookies = new Cookies();
     const [user, setUser] = useState(null)
 
@@ -17,6 +17,7 @@ function Singup() {
             cookies.set("lastName", lastName);
             cookies.set("username", username);
             cookies.set("hashpass", hashpass);
+            setIsAuth(true);
         });
     };
 
