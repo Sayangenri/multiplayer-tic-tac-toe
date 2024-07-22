@@ -9,16 +9,16 @@ function Singup() {
     const [user, setUser] = useState(null)
 
     const Singup = () => {
-    Axios.post("http://localhost:3001/singup",user).then(res=>{
-        const {token,userId,firstName,lastName,username,hashpass}=res.data;
-        cookies.set("token",token);
-        cookies.set("userId",userId);
-        cookies.set("firstName",firstName);
-        cookies.set("lastName",lastName);
-        cookies.set("username",username);
-        cookies.set("hashpass",hashpass);
-    });
-     };
+        Axios.post("http://localhost:3001/singup", user).then((res) => {
+            const { token, userId, firstName, lastName, username, hashpass } = res.data;
+            cookies.set("token", token);
+            cookies.set("userId", userId);
+            cookies.set("firstName", firstName);
+            cookies.set("lastName", lastName);
+            cookies.set("username", username);
+            cookies.set("hashpass", hashpass);
+        });
+    };
 
     return (
         <div className='Singup'>

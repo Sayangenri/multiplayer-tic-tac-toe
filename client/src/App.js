@@ -1,14 +1,15 @@
 import './App.css';
 import Singup from './components/Singup';
 import Login from './components/Login';
-import {StreamChat} from "stream-chat"
+import { StreamChat } from "stream-chat"
 import Cookies from "universal-cookie";
 
 function App() {
-  const api_key = "nv2zh5h8pmyh";
-  const token = cookies.get("token");
+  const api_key = "adbnguxepj9k";
+  const cookies = new Cookies();
+  const token = cookies.get('token');
   const client = StreamChat.getInstance(api_key);
-  
+  console.log(token)
   if (token) {
     client
       .connectUser(
@@ -28,8 +29,8 @@ function App() {
 
   return (
     <div className="App">
-      <Singup/>
-      <Login/>
+      <Singup />
+      <Login />
     </div>
   );
 }
