@@ -8,7 +8,7 @@ import Cookies from "universal-cookie";
 import { useState } from "react";
 
 function App() {
-  const api_key = "nv2zh5h8pmyh";
+  const api_key = "mw4j9ngehu64";
   const cookies = new Cookies();
   const token = cookies.get("token");
   const client = StreamChat.getInstance(api_key);

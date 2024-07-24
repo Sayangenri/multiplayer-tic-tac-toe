@@ -1,3 +1,5 @@
+import dotenv from 'dotenv';
+dotenv.config();
 import express from "express";
 import cors from "cors";
 import { StreamChat } from "stream-chat";
@@ -7,9 +9,12 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-const api_key = "nv2zh5h8pmyh";
-const api_secret =
-  "gf4wmuf9rj9vzfpvrdjkwr7qapwty64jdrb48qv7dmqejhrfhc6z94zr2atzcw4q";
+/*const api_key = process.env.API_KEY;
+const api_secret = process.env.API_SECRET;*/
+
+const api_key = "mw4j9ngehu64" ;
+const api_secret = "uu5hu5htz4esbtheppvxrdh7d9muuwymcms2pw34wvdhush4jx8namtm54rdc6p5";
+
 const serverClient = StreamChat.getInstance(api_key, api_secret);
 
 app.post("/singup", async (req, res) => {
