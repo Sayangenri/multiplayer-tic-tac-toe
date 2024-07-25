@@ -45,7 +45,6 @@ function Board({ result, setResult }) {
             });
 
             if (foundWinningPattern) {
-                alert(board[currPattern[0]] + " Win")
                 setResult({ winner: board[currPattern[0]], state: "won" });
             }
         });
@@ -82,6 +81,7 @@ function Board({ result, setResult }) {
 
     return (
         <div className="board">
+            <h2>{turn} : Turn</h2>
             <div className="row">
                 <Square
                     val={board[0]}
